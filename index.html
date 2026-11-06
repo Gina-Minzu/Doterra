@@ -23,7 +23,16 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);
   padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:40px;
   display:flex;justify-content:center;align-items:flex-start}
 main{width:100%;max-width:420px;display:flex;flex-direction:column;align-items:center;gap:28px;text-align:center;position:relative}
-.sprig{width:90px;height:120px}
+body{position:relative;overflow-x:hidden}
+main{z-index:1}
+.bouquet{width:220px;height:158px}
+.deco{position:absolute;z-index:0;pointer-events:none;width:clamp(150px,30vw,260px);height:auto}
+.deco.tl{top:-20px;left:-40px;transform:rotate(150deg)}
+.deco.tr{top:-30px;right:-50px;transform:rotate(-160deg)}
+.deco.bl{bottom:-30px;left:-50px;transform:rotate(20deg)}
+.deco.br{bottom:-20px;right:-40px;transform:rotate(-25deg)}
+.bottom-bunch{width:130px;height:110px}
+@media (max-width:520px){.deco{opacity:.55}}
 .name{margin:0;font-family:var(--script);font-weight:400;font-size:clamp(56px,16vw,72px);line-height:1;color:var(--plum);text-wrap:balance}
 .role{margin:10px 0 0;font-size:12px;letter-spacing:5px;font-weight:600;color:var(--ink)}
 .brand{margin:6px 0 0;font-size:13px;color:var(--muted)}
@@ -50,13 +59,34 @@ footer{font-size:12px;color:var(--muted)}
 
 </head>
 <body>
-<main>
-  <svg class="sprig" viewBox="0 0 200 260" aria-hidden="true">
-    <g transform="rotate(-14 100 250)">
-      <path d="M100 250 C100 190 102 130 100 40" fill="none" stroke="#7C8F6A" stroke-width="3"/>
-      <ellipse cx="94" cy="50" rx="7" ry="12" fill="#A992CF" transform="rotate(-20 94 50)"/><ellipse cx="106" cy="66" rx="7" ry="12" fill="#9A82C4" transform="rotate(20 106 66)"/><ellipse cx="94" cy="82" rx="7" ry="12" fill="#B8A3DA" transform="rotate(-20 94 82)"/><ellipse cx="106" cy="98" rx="7" ry="12" fill="#A992CF" transform="rotate(20 106 98)"/><ellipse cx="94" cy="114" rx="6" ry="11" fill="#9A82C4" transform="rotate(-20 94 114)"/><ellipse cx="106" cy="130" rx="6" ry="10" fill="#B8A3DA" transform="rotate(20 106 130)"/>
-      <path d="M100 210 C80 200 70 180 72 160 C88 172 96 190 100 210 Z" fill="#9AAB86"/>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="stem">
+      <path d="M100 250 C100 190 102 130 100 40" fill="none" stroke="#7C8F6A" stroke-width="2.5"/>
+      <ellipse cx="94" cy="50" rx="6" ry="11" fill="#A992CF" transform="rotate(-20 94 50)"/><ellipse cx="106" cy="64" rx="6" ry="11" fill="#9A82C4" transform="rotate(20 106 64)"/><ellipse cx="94" cy="78" rx="6" ry="11" fill="#B8A3DA" transform="rotate(-20 94 78)"/><ellipse cx="106" cy="92" rx="6" ry="11" fill="#A992CF" transform="rotate(20 106 92)"/><ellipse cx="94" cy="106" rx="6" ry="10" fill="#9A82C4" transform="rotate(-20 94 106)"/><ellipse cx="106" cy="120" rx="5" ry="9" fill="#B8A3DA" transform="rotate(20 106 120)"/><ellipse cx="95" cy="134" rx="5" ry="8" fill="#A992CF" transform="rotate(-20 95 134)"/>
     </g>
+    <g id="stem-s">
+      <path d="M100 250 C100 200 101 150 100 90" fill="none" stroke="#7C8F6A" stroke-width="2.5"/>
+      <ellipse cx="95" cy="98" rx="5" ry="9" fill="#B8A3DA" transform="rotate(-20 95 98)"/><ellipse cx="105" cy="110" rx="5" ry="9" fill="#9A82C4" transform="rotate(20 105 110)"/><ellipse cx="95" cy="122" rx="5" ry="9" fill="#A992CF" transform="rotate(-20 95 122)"/><ellipse cx="105" cy="134" rx="4" ry="8" fill="#B8A3DA" transform="rotate(20 105 134)"/><ellipse cx="95" cy="146" rx="4" ry="7" fill="#9A82C4" transform="rotate(-20 95 146)"/>
+    </g>
+    <path id="leaf-l" d="M100 215 C80 205 68 182 70 160 C88 174 96 194 100 215 Z" fill="#9AAB86"/>
+    <path id="leaf-r" d="M100 215 C120 205 132 182 130 160 C112 174 104 194 100 215 Z" fill="#9AAB86"/>
+    <g id="bunch">
+      <use href="#stem" transform="rotate(-34 100 250)"/><use href="#stem-s" transform="rotate(-20 100 250)"/><use href="#stem" transform="rotate(-8 100 250)"/><use href="#stem-s" transform="rotate(4 100 250)"/><use href="#stem" transform="rotate(16 100 250)"/><use href="#stem-s" transform="rotate(30 100 250)"/>
+      <use href="#leaf-l" transform="rotate(-10 100 250)"/><use href="#leaf-r" transform="rotate(8 100 250)"/>
+    </g>
+  </defs>
+</svg>
+
+<svg class="deco tl" viewBox="-50 0 300 260" aria-hidden="true"><use href="#bunch"/></svg>
+<svg class="deco tr" viewBox="-50 0 300 260" aria-hidden="true"><use href="#bunch"/></svg>
+<svg class="deco bl" viewBox="-50 0 300 260" aria-hidden="true"><use href="#bunch"/></svg>
+<svg class="deco br" viewBox="-50 0 300 260" aria-hidden="true"><use href="#bunch"/></svg>
+
+<main>
+  <svg class="bouquet" viewBox="-60 30 320 230" aria-hidden="true">
+    <use href="#stem" transform="rotate(-40 100 250)"/><use href="#stem-s" transform="rotate(-28 100 250)"/><use href="#stem" transform="rotate(-16 100 250)"/><use href="#stem-s" transform="rotate(-5 100 250)"/><use href="#stem" transform="rotate(5 100 250)"/><use href="#stem-s" transform="rotate(16 100 250)"/><use href="#stem" transform="rotate(28 100 250)"/><use href="#stem-s" transform="rotate(40 100 250)"/>
+    <use href="#leaf-l" transform="rotate(-14 100 250)"/><use href="#leaf-r" transform="rotate(12 100 250)"/><use href="#leaf-l" transform="rotate(10 100 250)"/>
   </svg>
 
   <header>
@@ -84,6 +114,8 @@ footer{font-size:12px;color:var(--muted)}
     <span class="lbl">PHONE · TELEFON</span>
     <span class="num">+353 87 293 9045</span>
   </div>
+
+  <svg class="bottom-bunch" viewBox="-50 40 300 220" aria-hidden="true"><use href="#bunch"/></svg>
 
   <div class="drops" aria-hidden="true">
     <svg viewBox="0 0 60 76" width="12" height="15"><path d="M30 2C30 2 6 32 6 50a24 24 0 0 0 48 0C54 32 30 2 30 2Z" fill="#B8A3DA"/></svg>
