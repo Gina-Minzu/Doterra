@@ -20,8 +20,9 @@
 }
 *{box-sizing:border-box}
 html,body{margin:0;min-height:100%}
+html{overflow-x:hidden}
 body{
-  position:relative;overflow-x:hidden;min-height:100vh;
+  position:relative;overflow-x:clip;min-height:100vh;
   background:radial-gradient(120% 90% at 50% 40%, var(--bg-1) 0%, var(--bg-2) 100%);
   color:var(--ink);font-family:var(--sans);
   padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));
@@ -68,7 +69,8 @@ main{position:relative;z-index:1;width:100%;max-width:440px;display:flex;flex-di
 .divider svg{width:12px;height:15px;flex:0 0 auto}
 
 .name-wrap{display:flex;flex-direction:column;align-items:center}
-.name{margin:0;font-family:var(--script);font-weight:400;font-size:clamp(60px,17vw,82px);line-height:1;color:var(--plum);text-wrap:balance}
+.name{margin:0;font-family:var(--script);font-weight:400;font-size:clamp(38px,12.5vw,78px);line-height:1.05;color:var(--plum);white-space:nowrap;display:flex;flex-direction:column;align-items:center}
+.nick{font-size:.55em;color:var(--violet);margin-top:2px}
 .swash{width:min(300px,78%);height:22px;margin-top:-2px}
 
 .tag{margin:0;font-size:15px;line-height:1.6;color:var(--muted);max-width:34ch}
@@ -126,7 +128,7 @@ main{position:relative;z-index:1;width:100%;max-width:440px;display:flex;flex-di
   </div>
 
   <header class="name-wrap">
-    <h1 class="name">Georgeta Minzu</h1>
+    <h1 class="name"><span>Georgeta Minzu</span><span class="nick">(Gina)</span></h1>
     <svg class="swash" viewBox="0 0 300 22" preserveAspectRatio="none" aria-hidden="true">
       <defs><linearGradient id="sw" x1="0" x2="1"><stop offset="0" stop-color="#B48AD6" stop-opacity="0"/><stop offset=".5" stop-color="#8E4CC0"/><stop offset="1" stop-color="#B48AD6" stop-opacity="0"/></linearGradient></defs>
       <path d="M4 18 C90 2 210 2 296 16" fill="none" stroke="url(#sw)" stroke-width="3" stroke-linecap="round"/>
