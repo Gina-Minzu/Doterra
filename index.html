@@ -6,110 +6,121 @@
 <title>Gina Minzu · doTERRA Wellness Advocate</title>
 <meta name="description" content="Contact Gina Minzu, doTERRA Wellness Advocate in Ireland, on WhatsApp or Facebook.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;500;600&display=swap">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Open+Sans:wght@400;600;700&display=swap">
 <style>
-/* One centred card, like the business card itself: name, title, two contact buttons. Single lavender look by choice. */
+/* Soft pink ground, blurred lavender in the top corners, sharp lavender at the bottom, centred purple content: matches Gina's printed card. */
 :root{
-  --bg:#F7F3FA; --card:#FFFFFF; --ink:#2E2838; --muted:#5B5168;
-  --plum:#5A4680; --lav:#A992CF; --lav-soft:#E6DDF1; --sage:#7C8F6A; --gold:#B99A5B;
-  --script:'Great Vibes', 'Brush Script MT', cursive;
-  --sans:'Montserrat', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --bg-1:#FCF7F9; --bg-2:#F4E7EE;
+  --ink:#4A1A5E; --plum:#5B2A73; --violet:#7E3FA6; --lilac:#B48AD6; --lilac-soft:#EFE3F7;
+  --muted:#6E5A78; --card:rgba(255,255,255,.82);
+  --script:'Great Vibes','Brush Script MT',cursive;
+  --sans:'Open Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
   color-scheme: light;
 }
 *{box-sizing:border-box}
-body{margin:0}
-html,body{min-height:100%}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);
-  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));padding-block:40px;
-  display:flex;justify-content:center;align-items:flex-start}
-main{width:100%;max-width:420px;display:flex;flex-direction:column;align-items:center;gap:28px;text-align:center;position:relative}
-body{position:relative;overflow-x:hidden}
-main{z-index:1}
-.bouquet{width:220px;height:158px}
-.deco{position:absolute;z-index:0;pointer-events:none;width:clamp(150px,30vw,260px);height:auto}
-.deco.tl{top:-20px;left:-40px;transform:rotate(150deg)}
-.deco.tr{top:-30px;right:-50px;transform:rotate(-160deg)}
-.deco.bl{bottom:-30px;left:-50px;transform:rotate(20deg)}
-.deco.br{bottom:-20px;right:-40px;transform:rotate(-25deg)}
-.bottom-bunch{width:130px;height:110px}
-@media (max-width:520px){.deco{opacity:.55}}
-.name{margin:0;font-family:var(--script);font-weight:400;font-size:clamp(56px,16vw,72px);line-height:1;color:var(--plum);text-wrap:balance}
-.role{margin:10px 0 0;font-size:12px;letter-spacing:5px;font-weight:600;color:var(--ink)}
-.brand{margin:6px 0 0;font-size:13px;color:var(--muted)}
-.tag{margin:0;font-size:15px;line-height:1.5;color:var(--muted);max-width:32ch}
-.links{width:100%;display:flex;flex-direction:column;gap:14px}
-.btn{display:flex;align-items:center;gap:16px;padding:16px 20px;border-radius:16px;background:var(--card);
-  border:1px solid var(--lav-soft);color:var(--ink);text-decoration:none;text-align:left;
-  box-shadow:0 2px 10px rgba(90,70,128,.08);transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease}
-.btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(90,70,128,.14);border-color:var(--lav)}
-.btn:focus-visible{outline:3px solid var(--plum);outline-offset:3px}
-.ico{flex:0 0 44px;height:44px;border-radius:50%;background:var(--lav-soft);display:flex;align-items:center;justify-content:center}
+html,body{margin:0;min-height:100%}
+body{
+  position:relative;overflow-x:hidden;min-height:100vh;
+  background:radial-gradient(120% 90% at 50% 40%, var(--bg-1) 0%, var(--bg-2) 100%);
+  color:var(--ink);font-family:var(--sans);
+  padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px));
+  padding-block:48px 64px;
+  display:flex;justify-content:center;align-items:flex-start;
+}
+/* Corner lavender */
+.deco{position:absolute;z-index:0;pointer-events:none;height:auto}
+.deco.tl{top:-70px;left:-90px;width:360px;transform:rotate(155deg);filter:blur(7px);opacity:.75}
+.deco.tr{top:-80px;right:-90px;width:340px;transform:rotate(-150deg) scaleX(-1);filter:blur(8px);opacity:.6}
+.deco.bl{bottom:-40px;left:-70px;width:300px;transform:rotate(58deg)}
+.deco.br{bottom:-60px;right:-80px;width:250px;transform:rotate(-55deg) scaleX(-1);filter:blur(1.5px);opacity:.9}
+.leaf{position:absolute;z-index:0;pointer-events:none;right:24px;bottom:150px;width:120px;height:auto;transform:rotate(-12deg)}
+@media (max-width:560px){
+  .deco.tl{width:240px;top:-60px;left:-80px}
+  .deco.tr{width:220px;top:-60px;right:-80px}
+  .deco.bl{width:200px;left:-70px}
+  .deco.br{width:170px;right:-70px}
+  .leaf{width:80px;bottom:120px;right:8px}
+}
+
+main{position:relative;z-index:1;width:100%;max-width:440px;display:flex;flex-direction:column;align-items:center;gap:26px;text-align:center}
+
+.brand{display:flex;flex-direction:column;align-items:center;gap:6px}
+.logo{width:170px;height:auto;display:block}
+.role{margin:0;font-size:18px;font-weight:600;color:var(--violet);letter-spacing:.3px}
+.divider{display:flex;align-items:center;gap:10px;width:min(280px,80%);margin-top:6px}
+.divider::before,.divider::after{content:"";flex:1;height:1.5px;background:linear-gradient(90deg,transparent,var(--violet))}
+.divider::after{background:linear-gradient(90deg,var(--violet),transparent)}
+.divider svg{width:12px;height:15px;flex:0 0 auto}
+
+.name-wrap{display:flex;flex-direction:column;align-items:center}
+.name{margin:0;font-family:var(--script);font-weight:400;font-size:clamp(60px,17vw,82px);line-height:1;color:var(--plum);text-wrap:balance}
+.swash{width:min(300px,78%);height:22px;margin-top:-2px}
+
+.tag{margin:0;font-size:15px;line-height:1.6;color:var(--muted);max-width:34ch}
+
+.links{width:100%;display:flex;flex-direction:column;gap:12px}
+.btn{display:flex;align-items:center;gap:16px;padding:14px 18px;border-radius:16px;background:var(--card);
+  border:1px solid rgba(126,63,166,.18);color:var(--ink);text-decoration:none;text-align:left;
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  box-shadow:0 4px 16px rgba(91,42,115,.08);transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(91,42,115,.16);border-color:var(--lilac)}
+.btn:focus-visible{outline:3px solid var(--violet);outline-offset:3px}
+.ico{flex:0 0 44px;height:44px;border-radius:50%;background:var(--lilac-soft);display:flex;align-items:center;justify-content:center}
 .ico svg{width:22px;height:22px}
-.txt{display:flex;flex-direction:column;gap:3px;min-width:0}
-.t1{font-weight:600;font-size:16px}
+.txt{display:flex;flex-direction:column;gap:2px;min-width:0}
+.t1{font-weight:700;font-size:16px;color:var(--plum)}
 .t2{font-size:13px;color:var(--muted)}
-.arrow{margin-left:auto;color:var(--plum)}
-.btn.join{background:var(--plum);border-color:var(--plum);color:#FFFFFF}
-.btn.join:hover{border-color:var(--plum);box-shadow:0 6px 18px rgba(90,70,128,.3)}
+.arrow{margin-left:auto;color:var(--violet);font-size:18px}
+.btn.join{background:linear-gradient(135deg,#6A2C8A,#8E4CC0);border-color:transparent;color:#fff}
+.btn.join:hover{box-shadow:0 8px 22px rgba(91,42,115,.32)}
 .btn.join .ico{background:rgba(255,255,255,.18)}
-.btn.join .t2{color:#EDE6F5}
-.btn.join .arrow{color:#FFFFFF}
-.phone{display:flex;flex-direction:column;gap:6px;align-items:center}
-.phone .lbl{font-size:11px;letter-spacing:3px;font-weight:600;color:var(--muted)}
-.phone .num{font-size:18px;font-weight:500;user-select:all;font-variant-numeric:tabular-nums}
-.drops{display:flex;gap:10px;align-items:flex-end}
-footer{font-size:12px;color:var(--muted)}
+.btn.join .t1,.btn.join .arrow{color:#fff}
+.btn.join .t2{color:#F1E6FA}
+
+.contact{display:flex;align-items:center;gap:14px;padding:4px 0}
+.contact .ic{display:flex;align-items:center;justify-content:center;padding-right:14px;border-right:2px solid var(--violet);height:36px}
+.contact .ic svg{width:22px;height:22px}
+.contact .num{font-size:20px;font-weight:700;color:var(--plum);user-select:all;font-variant-numeric:tabular-nums}
+
 @media (prefers-reduced-motion: reduce){.btn{transition:none}.btn:hover{transform:none}}
 </style>
-
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true">
-  <defs>
-    <g id="stem">
-      <path d="M100 250 C100 190 102 130 100 40" fill="none" stroke="#7C8F6A" stroke-width="2.5"/>
-      <ellipse cx="94" cy="50" rx="6" ry="11" fill="#A992CF" transform="rotate(-20 94 50)"/><ellipse cx="106" cy="64" rx="6" ry="11" fill="#9A82C4" transform="rotate(20 106 64)"/><ellipse cx="94" cy="78" rx="6" ry="11" fill="#B8A3DA" transform="rotate(-20 94 78)"/><ellipse cx="106" cy="92" rx="6" ry="11" fill="#A992CF" transform="rotate(20 106 92)"/><ellipse cx="94" cy="106" rx="6" ry="10" fill="#9A82C4" transform="rotate(-20 94 106)"/><ellipse cx="106" cy="120" rx="5" ry="9" fill="#B8A3DA" transform="rotate(20 106 120)"/><ellipse cx="95" cy="134" rx="5" ry="8" fill="#A992CF" transform="rotate(-20 95 134)"/>
-    </g>
-    <g id="stem-s">
-      <path d="M100 250 C100 200 101 150 100 90" fill="none" stroke="#7C8F6A" stroke-width="2.5"/>
-      <ellipse cx="95" cy="98" rx="5" ry="9" fill="#B8A3DA" transform="rotate(-20 95 98)"/><ellipse cx="105" cy="110" rx="5" ry="9" fill="#9A82C4" transform="rotate(20 105 110)"/><ellipse cx="95" cy="122" rx="5" ry="9" fill="#A992CF" transform="rotate(-20 95 122)"/><ellipse cx="105" cy="134" rx="4" ry="8" fill="#B8A3DA" transform="rotate(20 105 134)"/><ellipse cx="95" cy="146" rx="4" ry="7" fill="#9A82C4" transform="rotate(-20 95 146)"/>
-    </g>
-    <path id="leaf-l" d="M100 215 C80 205 68 182 70 160 C88 174 96 194 100 215 Z" fill="#9AAB86"/>
-    <path id="leaf-r" d="M100 215 C120 205 132 182 130 160 C112 174 104 194 100 215 Z" fill="#9AAB86"/>
-    <g id="bunch">
-      <use href="#stem" transform="rotate(-34 100 250)"/><use href="#stem-s" transform="rotate(-20 100 250)"/><use href="#stem" transform="rotate(-8 100 250)"/><use href="#stem-s" transform="rotate(4 100 250)"/><use href="#stem" transform="rotate(16 100 250)"/><use href="#stem-s" transform="rotate(30 100 250)"/>
-      <use href="#leaf-l" transform="rotate(-10 100 250)"/><use href="#leaf-r" transform="rotate(8 100 250)"/>
-    </g>
-  </defs>
-</svg>
 
-<svg class="deco tl" viewBox="-50 0 300 260" aria-hidden="true"><use href="#bunch"/></svg>
-<svg class="deco tr" viewBox="-50 0 300 260" aria-hidden="true"><use href="#bunch"/></svg>
-<svg class="deco bl" viewBox="-50 0 300 260" aria-hidden="true"><use href="#bunch"/></svg>
-<svg class="deco br" viewBox="-50 0 300 260" aria-hidden="true"><use href="#bunch"/></svg>
+<img class="deco tl" src="lavender.svg" alt="" aria-hidden="true">
+<img class="deco tr" src="lavender.svg" alt="" aria-hidden="true">
+<img class="deco bl" src="lavender.svg" alt="" aria-hidden="true">
+<img class="deco br" src="lavender.svg" alt="" aria-hidden="true">
+<img class="leaf" src="leaves.svg" alt="" aria-hidden="true">
 
 <main>
-  <svg class="bouquet" viewBox="-60 30 320 230" aria-hidden="true">
-    <use href="#stem" transform="rotate(-40 100 250)"/><use href="#stem-s" transform="rotate(-28 100 250)"/><use href="#stem" transform="rotate(-16 100 250)"/><use href="#stem-s" transform="rotate(-5 100 250)"/><use href="#stem" transform="rotate(5 100 250)"/><use href="#stem-s" transform="rotate(16 100 250)"/><use href="#stem" transform="rotate(28 100 250)"/><use href="#stem-s" transform="rotate(40 100 250)"/>
-    <use href="#leaf-l" transform="rotate(-14 100 250)"/><use href="#leaf-r" transform="rotate(12 100 250)"/><use href="#leaf-l" transform="rotate(10 100 250)"/>
-  </svg>
+  <div class="brand">
+    <img class="logo" src="logo.png" alt="doTERRA">
+    <p class="role">Wellness Advocate</p>
+    <div class="divider" aria-hidden="true">
+      <svg viewBox="0 0 60 76"><path d="M30 2C30 2 6 32 6 50a24 24 0 0 0 48 0C54 32 30 2 30 2Z" fill="#7E3FA6"/></svg>
+    </div>
+  </div>
 
-  <header>
+  <header class="name-wrap">
     <h1 class="name">Gina Minzu</h1>
-    <p class="role">WELLNESS ADVOCATE</p>
-    <p class="brand">doTERRA · Ireland</p>
+    <svg class="swash" viewBox="0 0 300 22" preserveAspectRatio="none" aria-hidden="true">
+      <defs><linearGradient id="sw" x1="0" x2="1"><stop offset="0" stop-color="#B48AD6" stop-opacity="0"/><stop offset=".5" stop-color="#8E4CC0"/><stop offset="1" stop-color="#B48AD6" stop-opacity="0"/></linearGradient></defs>
+      <path d="M4 18 C90 2 210 2 296 16" fill="none" stroke="url(#sw)" stroke-width="3" stroke-linecap="round"/>
+    </svg>
   </header>
 
   <p class="tag">Pure essential oils &amp; natural solutions.<br>Uleiuri esențiale pure &amp; soluții naturale.</p>
 
   <nav class="links" aria-label="Contact Gina">
     <a class="btn" href="https://wa.me/353872939045" target="_blank" rel="noopener">
-      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#5A4680" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.5 8.5 0 1 1 21 11.5z"/><path d="M9 9.5c.3 1.6 1.9 3.6 3.9 4.4.5.2 1 0 1.3-.4l.5-.7"/></svg></span>
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#5B2A73" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.5 8.5 0 1 1 21 11.5z"/><path d="M9 9.5c.3 1.6 1.9 3.6 3.9 4.4.5.2 1 0 1.3-.4l.5-.7"/></svg></span>
       <span class="txt"><span class="t1">WhatsApp</span><span class="t2">Send a message · Trimite un mesaj</span></span>
       <span class="arrow" aria-hidden="true">→</span>
     </a>
     <a class="btn" href="https://www.facebook.com/share/1DTdHgcXXu/?mibextid=wwXIfr" target="_blank" rel="noopener">
-      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#5A4680" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h-2.5A3.5 3.5 0 0 0 9 6.5V10H6.5v3.5H9V21h3.5v-7.5H15l.5-3.5h-3V7a1 1 0 0 1 1-1H15z"/></svg></span>
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="#5B2A73" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h-2.5A3.5 3.5 0 0 0 9 6.5V10H6.5v3.5H9V21h3.5v-7.5H15l.5-3.5h-3V7a1 1 0 0 1 1-1H15z"/></svg></span>
       <span class="txt"><span class="t1">Facebook</span><span class="t2">Follow Gina · Urmărește-o pe Gina</span></span>
       <span class="arrow" aria-hidden="true">→</span>
     </a>
@@ -121,17 +132,9 @@ footer{font-size:12px;color:var(--muted)}
     </a>
   </nav>
 
-  <div class="phone">
-    <span class="lbl">PHONE · TELEFON</span>
+  <div class="contact">
+    <span class="ic"><svg viewBox="0 0 24 24" fill="#7E3FA6" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.6a1 1 0 0 1-.25 1z"/></svg></span>
     <span class="num">+353 87 293 9045</span>
-  </div>
-
-  <svg class="bottom-bunch" viewBox="-50 40 300 220" aria-hidden="true"><use href="#bunch"/></svg>
-
-  <div class="drops" aria-hidden="true">
-    <svg viewBox="0 0 60 76" width="12" height="15"><path d="M30 2C30 2 6 32 6 50a24 24 0 0 0 48 0C54 32 30 2 30 2Z" fill="#B8A3DA"/></svg>
-    <svg viewBox="0 0 60 76" width="18" height="23"><path d="M30 2C30 2 6 32 6 50a24 24 0 0 0 48 0C54 32 30 2 30 2Z" fill="#A992CF"/></svg>
-    <svg viewBox="0 0 60 76" width="12" height="15"><path d="M30 2C30 2 6 32 6 50a24 24 0 0 0 48 0C54 32 30 2 30 2Z" fill="#B99A5B"/></svg>
   </div>
 </main>
 
