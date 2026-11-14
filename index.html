@@ -30,17 +30,31 @@ body{
 }
 /* Corner lavender */
 .deco{position:absolute;z-index:0;pointer-events:none;height:auto}
-.deco.tl{top:-70px;left:-90px;width:360px;transform:rotate(155deg);filter:blur(7px);opacity:.75}
-.deco.tr{top:-80px;right:-90px;width:340px;transform:rotate(-150deg) scaleX(-1);filter:blur(8px);opacity:.6}
+.deco.tl{top:-40px;left:-70px;width:300px;transform:rotate(122deg)}
+.deco.tr{top:-40px;right:-70px;width:300px;transform:rotate(-122deg) scaleX(-1)}
 .deco.bl{bottom:-40px;left:-70px;width:300px;transform:rotate(58deg)}
-.deco.br{bottom:-60px;right:-80px;width:250px;transform:rotate(-55deg) scaleX(-1);filter:blur(1.5px);opacity:.9}
-.leaf{position:absolute;z-index:0;pointer-events:none;right:24px;bottom:150px;width:120px;height:auto;transform:rotate(-12deg)}
+.deco.br{bottom:-40px;right:-70px;width:300px;transform:rotate(-58deg) scaleX(-1)}
+.leaf{position:absolute;z-index:0;pointer-events:none;right:24px;bottom:220px;width:110px;height:auto;transform:rotate(-12deg)}
+/* Faint lavender scattered across the page */
+.sprig{position:absolute;z-index:0;pointer-events:none;height:auto;opacity:.16;filter:blur(1px) saturate(.7)}
+.s1{top:22%;left:4%;width:150px;transform:rotate(28deg)}
+.s2{top:30%;right:3%;width:170px;transform:rotate(-24deg) scaleX(-1)}
+.s3{top:52%;left:12%;width:120px;transform:rotate(-14deg)}
+.s4{top:58%;right:10%;width:130px;transform:rotate(18deg) scaleX(-1)}
+.s5{top:12%;left:30%;width:100px;transform:rotate(160deg)}
+.s6{top:14%;right:28%;width:100px;transform:rotate(-165deg) scaleX(-1)}
+.s7{top:76%;left:34%;width:110px;transform:rotate(8deg)}
+.s8{top:80%;right:34%;width:110px;transform:rotate(-8deg) scaleX(-1)}
 @media (max-width:560px){
-  .deco.tl{width:240px;top:-60px;left:-80px}
-  .deco.tr{width:220px;top:-60px;right:-80px}
-  .deco.bl{width:200px;left:-70px}
-  .deco.br{width:170px;right:-70px}
-  .leaf{width:80px;bottom:120px;right:8px}
+  body{padding-top:96px;padding-bottom:190px}
+  .deco.tl,.deco.tr,.deco.bl,.deco.br{width:165px}
+  .deco.tl{top:-55px;left:-80px}
+  .deco.tr{top:-55px;right:-80px}
+  .deco.bl{bottom:-40px;left:-80px}
+  .deco.br{bottom:-40px;right:-80px}
+  .leaf{width:70px;bottom:150px;right:8px}
+  .sprig{opacity:.11;width:110px}
+  .s1{left:-6%}.s2{right:-8%}.s3{left:-4%}.s4{right:-6%}
 }
 
 main{position:relative;z-index:1;width:100%;max-width:440px;display:flex;flex-direction:column;align-items:center;gap:26px;text-align:center}
@@ -93,6 +107,14 @@ main{position:relative;z-index:1;width:100%;max-width:440px;display:flex;flex-di
 <img class="deco bl" src="lavender.svg" alt="" aria-hidden="true">
 <img class="deco br" src="lavender.svg" alt="" aria-hidden="true">
 <img class="leaf" src="leaves.svg" alt="" aria-hidden="true">
+<img class="sprig s1" src="lavender.svg" alt="" aria-hidden="true">
+<img class="sprig s2" src="lavender.svg" alt="" aria-hidden="true">
+<img class="sprig s3" src="lavender.svg" alt="" aria-hidden="true">
+<img class="sprig s4" src="lavender.svg" alt="" aria-hidden="true">
+<img class="sprig s5" src="lavender.svg" alt="" aria-hidden="true">
+<img class="sprig s6" src="lavender.svg" alt="" aria-hidden="true">
+<img class="sprig s7" src="lavender.svg" alt="" aria-hidden="true">
+<img class="sprig s8" src="lavender.svg" alt="" aria-hidden="true">
 
 <main>
   <div class="brand">
